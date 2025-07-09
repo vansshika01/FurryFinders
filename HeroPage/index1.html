@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furry Finders</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Bugaloo&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-paw"></i> FurryFinders
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Categories.html">Category</a></li>
+                <li><a href="ContactUs/index.html">Contact Us</a></li>
+                <li><a href="./FAQs/FAQs.html">FAQs</a></li>
+                <div>
+                    <!-- <label for="userRole">Choose Your Role:</label> -->
+                    <select id="userRole" style="padding: 2px 10px; font-size: 16px; border-radius: 5px; background-color: #add8e6; width: 120px;" onchange="redirectUser()">
+                        <option value="">Select...</option>
+                        <option value="buyer">Buyer</option>
+                        <option value="seller">Seller</option>
+                    </select>
+                </div>
+                <script>
+                    // Redirect user based on their role
+                    function redirectUser() {
+                        let role = document.getElementById("userRole").value;
+                
+                        // Check if a role is selected
+                        if (role) {
+                            // Store the selected role in localStorage
+                            localStorage.setItem("userRole", role);
+                
+                            // Redirect logic based on the role
+                            if (role === "seller") {
+                                // Redirect to the form.html page in the same folder
+                                window.location.href = "form.html";
+                            }
+                            else if (role === "buyer") {
+                                location.reload(); // Reload the same page for Buyer
+                            }
+                            //  else if (role === "seller") {
+                            //     // Redirect to the form.html page in the same folder
+                            //     window.location.href = "/my-express-app/src/Hero/form.html";
+                            // }
+                        }
+                    }
+                
+                    // Update the select dropdown based on previously selected role
+                    window.onload = function() {
+                        let role = localStorage.getItem("userRole");
+                        let userRoleSelect = document.getElementById("userRole");
+                
+                        if (role === "buyer") {
+                            userRoleSelect.value = "buyer"; // Pre-select Buyer
+                        } else if (role === "seller") {
+                            userRoleSelect.value = "seller"; // Pre-select Seller
+                        }
+                    };
+                </script>
+                
+                
+            </body>
+            </html>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="content">
+            <h1>Furry <br> Finders</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Ultricies sem tellus nisl tincidunt volutpat.</p>
+            <p>Nulla et nisl justo, auctor morbi.</p>
+        </div>
+        <div class="image-container">
+            <img src="assets/Group 3 (1).svg" alt="Cute Puppy" width="500px" height="500px">
+        </div>
+        <div class="right-bg"></div>
+    </section>
+
+    <section class="Categories">
+        <div class="categories">
+            <h1>Categories</h1>
+        </div>
+        <div class="category-imgs">
+            <a href="dog.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/dog-img(1).png" class="animal-img">
+                </div>
+            </a>
+            <a href="cat.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/cat.png" class="animal-img">
+                </div>
+            </a>
+            <a href="rabbit.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/rabbit.png" class="animal-img">
+                </div>
+            </a>
+            <a href="cow.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/cow.png" class="animal-img">
+                </div>
+            </a>
+            <a href="buffalo.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/buffalo.png" class="animal-img">
+                </div>
+            </a>
+            <a href="parrot.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/parrot.png" class="animal-img">
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="Veterian-Doctor">
+        <div class="content1">
+            <h3>Meet Our Virtual Veterinarian</h3>
+        </div>
+        <div class="content-class">
+            <div class="content2">
+                <div class="category1">
+                    <img src="assets/Group 4.svg" class="category-box1">
+                    <img src="assets/pet-doctor (1).svg" class="vetdoc-img">
+                </div>
+            </div>
+            <div class="content3">
+                <h2>Meet Our Caring Expert</h2>
+                <div class="chatbutton">
+                    <div class="text-container">
+                        <div class="logo2">
+                            <i class="fa-solid fa-briefcase-medical"></i>
+                        </div>
+                        <div class="bold">
+                            <b>YOUR PETS HEALTH IS OUR PRIORITY!</b>
+                        </div>
+                    </div>
+                    <button>Click On The Chat Icon At The Bottom Right</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Pet-Shop">
+        <div class="pet-container">
+            <div class="pet-content">
+                <button><h3><a href="./location/index.html" >Nearby Pet Shops</a></h3></button>
+                <div class="text">Search Nearby Pet Shops!</div>
+            </div>
+            <div class="pet-image">
+                <div class="category2">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/pet-shop.png" class="vetdoc-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Footer">
+        <div class="classes">
+            <div class="class1">
+                <ul>
+                    <li><a href="ContactUs/index.html" style="text-decoration: none; color: black;">Contact Us</a></li>
+                    <li><a href="Footer/about.html" style="text-decoration: none; color: black;">About Us</a></li>
+                    
+                    <li><a href="./FAQs/FAQs.html" style="text-decoration: none; color: black;">FAQs</a></li>
+                    <li><a href="Footer/HowItWorks.html" style="text-decoration: none; color: black;">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="class2">
+                <div class="img">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/Footer-img.svg" class="footer-img">
+                </div>
+                <div class="foot-logo">
+                    <i class="fa-solid fa-paw"></i> FurryFinders
+                </div>
+            </div>
+            <div class="class3">
+                <ul>
+                   
+                    <li><a href="Footer/Privacy.html" style="text-decoration: none; color: black;">Privacy and Policy</a></li>
+                    <li><a href="" style="text-decoration: none; color: black;">Popular Product</a></li>
+                    <li><a href="Footer/CallUs.html" style="text-decoration: none; color: black;">Call Us</a></li>
+                    <li><a href="Footer/Blog.html" style="text-decoration: none; color: black;">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="OlrwNc53CG9zwElNh-v6S";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+        </script>
+
+</body>
+</html>

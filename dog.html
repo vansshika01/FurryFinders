@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Categories {
+    background: linear-gradient(to bottom, #eeefef, #cbe4f3);
+    position: relative; /* Important: Allows absolute positioning inside */
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensures the background doesn't exceed the section */
+}
+
+/* Apply the Rectangle 7.svg background separately */
+.Categories::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: url('assets/Rectangle\ 7.svg') no-repeat center center;
+    background-size: cover; /* Ensures full coverage */
+
+    opacity: 0.3; /* Only applies to this background */
+    z-index: 0; /* Sends it behind everything */
+}
+
+
+.categories{
+    margin-top:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+/* Ensures the category section is properly aligned */
+.category-imgs {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to move to next row */
+    justify-content: center; /* Centers the boxes */
+    gap: 30px; /* Space between boxes */
+    max-width: 1200px; /* Prevents excessive stretching */
+    margin: auto; /* Centers section */
+}
+
+
+/* Fixes each box size */
+.category {
+    position: relative; /* Allows absolute positioning of images */
+    width: 300px; /* Consistent width */
+    height: 350px; /* Consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix background box size */
+.category-box {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* Ensures it scales correctly */
+}
+
+/* Centers animal images inside the box */
+.animal-img {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ensures proper centering */
+    width: 80%; /* Adjust image size within box */
+    height: auto;
+}
+.category .animal-img[src*="labrador retriver"] {
+    width: 90%; /* Make it larger */
+    height: auto;
+    /* padding-left:50px; */
+}
+
+/* Decrease the size of the Rabbit Image */
+.category .animal-img[src*="jerman shepherd"] {
+    width: 60%; /* Reduce size */
+    height: auto;
+}
+.category .animal-img[src*="golden-retriver"] {
+    width: 60%; /* Reduce size */
+    height: auto;
+}
+.category .animal-img[src*="pomeranian"] {
+    width: 80%; 
+    height: auto;
+}
+.category .animal-img[src*="beagle"] {
+    width: 70%; 
+    height: auto;
+    padding-bottom:50px;
+}
+.category .animal-img[src*="siberian.husky"] {
+    padding-bottom:20px;
+    width: 65%; 
+    height: auto;
+}
+
+.category-link {
+    text-decoration: none; /* Removes underline */
+    display: block;
+    width: fit-content; /* Ensures the link wraps around the div */
+}
+
+/* Ensures the box is clickable */
+.category {
+    cursor: pointer; /* Shows pointer on hover */
+    transition: transform 0.2s ease-in-out; /* Adds click effect */
+}
+
+/* Add hover effect */
+.category:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.content1{
+    margin-top:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+.category1 {
+    position: relative; /* Needed for absolute positioning of the vet doctor image */
+    width: 380px; /* Adjust as needed */
+    height: 450px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-box1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-right:30px;
+    margin-top:10px;
+    /* padding-left:30px; */
+}
+.breed-button {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #2b5d79; /* Orange color */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.breed-button:hover {
+    background-color: #e68900; /* Darker orange */
+}
+    </style>
+</head>
+<body>
+    <section class="Categories">
+        <div class="categories">
+        <p><h1>Dog-Breads</h1></p>
+        </div>
+        <div class="category-imgs">
+            <a href="labrador.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/labrador retriver.png" class="animal-img">
+                    <!-- <button class="breed-button">Labrador Retriever</button> -->
+                </div>
+                <!-- <div class="button"> -->
+                    <button class="breed-button">Labrador Retriever</button>
+                <!-- </div> -->
+            </a>
+        
+            <a href="jerman-shepherd.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/jerman shepherd.png" class="animal-img">
+                </div>
+                <button class="breed-button">Jerman Shepherd</button>
+            </a>
+        
+            <a href="golden-retriver.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/golden-retriver.png" class="animal-img">
+                </div>
+                <button class="breed-button">Golden-Retriver</button>
+            </a>
+            <a href="pomeranian.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/pomeranian.png" class="animal-img">
+                </div>
+                <button class="breed-button">pomeranian</button>
+            </a>
+        
+            <a href="beagle.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/beagle.png" class="animal-img">
+                </div>
+                <button class="breed-button">Beagle</button>
+            </a>
+        
+            <a href="siberian-husky.html" class="category-link">
+                <div class="category">
+                    <img src="assets/Group 4.svg" class="category-box">
+                    <img src="assets/siberian.husky.png" class="animal-img">
+                </div>
+                <button class="breed-button">Siberian-Husky</button>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

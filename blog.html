@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Furry Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .blog-post {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .blog-post h2 {
+            color: #333;
+        }
+        .blog-post p {
+            color: #555;
+        }
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .read-more:hover {
+            background-color: #555;
+        }
+        .full-content {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function toggleReadMore(btn) {
+            var content = btn.previousElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                btn.innerText = "Read Less";
+            } else {
+                content.style.display = "none";
+                btn.innerText = "Read More";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Blog</h1>
+        
+        <div class="blog-post">
+            <h2>How to Take Care of Your Pet</h2>
+            <p>Learn essential tips and tricks for keeping your pet healthy and happy...</p>
+            <p class="full-content">Ensuring proper nutrition, regular vet check-ups, and a loving environment are key to a pet’s well-being. Always provide fresh water, balanced meals, and a comfortable space for your pet to thrive.</p>
+            <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        
+        <div class="blog-post">
+            <h2>Top 10 Dog Breeds for Families</h2>
+            <p>Discover the best dog breeds that are perfect for family life...</p>
+            <p class="full-content">Labrador Retrievers, Golden Retrievers, and Beagles are among the best family dogs. These breeds are known for their friendly nature, intelligence, and loyalty, making them great companions for children.</p>
+            <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+        
+        <div class="blog-post">
+            <h2>Understanding Your Pet’s Behavior</h2>
+            <p>Decode what your pet’s actions mean and how to respond...</p>
+            <p class="full-content">Pets communicate through body language, vocalizations, and actions. Recognizing signs of stress, happiness, or discomfort can strengthen your bond and help address any behavioral issues effectively.</p>
+            <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,465 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bugaloo', cursive;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    /* background-color : rgba(176, 217, 240, 1); */
+    background: linear-gradient(to right, #dcf0f0, #b0d9f0); 
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: #6d6d6e;
+    margin-right: 8px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    /* background-color:aqua; */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    
+}
+
+.hero {
+    position:reative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+
+.content {
+    width: 50%;
+}
+
+.content h1 {
+    font-size: 50px;
+    font-weight: 600;
+    color: #333;
+}
+
+.content p {
+    color: #666;
+    margin-top: 10px;
+}
+
+.image-container {
+    position:relative;
+    /* width: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    /* width: 350px; */
+    position:relative;
+    z-index:2;
+}
+.right-bg {
+    position: absolute; /* Positions it relative to the viewport */
+    top: -50; /* Adjust this to move below the navbar */
+    right: 0px; /* Aligns it to the right */
+    width: 900px; /* Set a width */
+    height: 100vh; /* Set a height */
+    background-image: url('assets/Rectangle\ 1.svg');
+    background-size: contain; /* Maintains original form */
+    background-repeat: no-repeat;
+    background-position: right;
+    z-index:-1;
+}
+
+.hero::after {
+    content: "";
+    background: url('assets/Rectangle\ 7.svg') repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.Categories {
+    background: linear-gradient(to bottom, #eeefef, #cbe4f3);
+    position: relative; /* Important: Allows absolute positioning inside */
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensures the background doesn't exceed the section */
+}
+
+/* Apply the Rectangle 7.svg background separately */
+.Categories::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: url('assets/Rectangle\ 7.svg') no-repeat center center;
+    background-size: cover; /* Ensures full coverage */
+
+    opacity: 0.3; /* Only applies to this background */
+    z-index: 0; /* Sends it behind everything */
+}
+
+
+.categories{
+    margin-top:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+/* Ensures the category section is properly aligned */
+.category-imgs {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to move to next row */
+    justify-content: center; /* Centers the boxes */
+    gap: 30px; /* Space between boxes */
+    max-width: 1200px; /* Prevents excessive stretching */
+    margin: auto; /* Centers section */
+}
+
+
+/* Fixes each box size */
+.category {
+    position: relative; /* Allows absolute positioning of images */
+    width: 300px; /* Consistent width */
+    height: 350px; /* Consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix background box size */
+.category-box {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* Ensures it scales correctly */
+}
+
+/* Centers animal images inside the box */
+.animal-img {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ensures proper centering */
+    width: 80%; /* Adjust image size within box */
+    height: auto;
+}
+.category .animal-img[src*="dog-img"] {
+    width: 150%; /* Make it larger */
+    height: auto;
+    padding-right:100px;
+}
+
+/* Decrease the size of the Rabbit Image */
+.category .animal-img[src*="rabbit"] {
+    width: 60%; /* Reduce size */
+    height: auto;
+}
+.category .animal-img[src*="cat"] {
+    width: 60%; /* Reduce size */
+    height: auto;
+}
+.category .animal-img[src*="cow"] {
+    width: 90%; 
+    height: auto;
+    padding-right:80px;
+}
+.category .animal-img[src*="buffalo"] {
+    width: 60%; 
+    height: auto;
+}
+.category .animal-img[src*="parrot"] {
+    margin-top:30px;
+    width: 55%; 
+    height: auto;
+}
+
+.category-link {
+    text-decoration: none; /* Removes underline */
+    display: block;
+    width: fit-content; /* Ensures the link wraps around the div */
+}
+
+/* Ensures the box is clickable */
+.category {
+    cursor: pointer; /* Shows pointer on hover */
+    transition: transform 0.2s ease-in-out; /* Adds click effect */
+}
+
+/* Add hover effect */
+.category:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.content1{
+    margin-top:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+.category1 {
+    position: relative; /* Needed for absolute positioning of the vet doctor image */
+    width: 380px; /* Adjust as needed */
+    height: 450px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-box1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-right:30px;
+    margin-top:10px;
+    /* padding-left:30px; */
+}
+
+/* Fix the vet doctor image */
+.vetdoc-img {
+    position: absolute; /* Ensures it's placed on top */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; /* Adjust image size */
+    height: auto;
+}
+.content-class{
+    display:flex;
+    justify-content:space-evenly;
+}
+.content3{
+    margin-top:60px;
+    font-size:20px;
+}
+.chatbutton{
+    margin-top:60px;
+    padding-top:10px;
+}
+.chatbutton button{
+    display:inline-block;
+    font-size:18px;
+    font-weight:bold;
+    margin-top:40px;
+    background-color:#97d1f3;
+    border-radius: 10px;
+    border:none;
+    cursor:pointer;
+    padding:10px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; 
+}
+.chatbutton button:hover {
+    transform: scale(1.05);
+    background-color: #80c0e5;
+}
+
+/* Active (Click) Effect */
+.chatbutton button:active {
+    transform: scale(0.95);
+}
+.chatbutton p {
+    display:flex;
+    margin-bottom: 20px;
+    max-width: 600px;
+    text-align: left;
+    font-size:20px;
+}
+.Veterian-Doctor{
+    background: linear-gradient(to bottom, #eeefef, #cbe4f3);
+    position: relative; /* Important: Allows absolute positioning inside */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.logo2{
+    padding-right:20px;
+  
+}
+.text-container{
+    display:flex;
+}
+.pet-content button{
+    align-items:center;
+    margin-top:30px;
+    background-color:#97d1f3;
+    border-radius: 10px;
+    /* border-color: #b0d9f0; */
+    border:none;
+    cursor:pointer;
+    padding:10px;
+    font-size:18px;
+}
+.pet-container {
+    /* background-color:#cbe4f3; */
+    display: flex;
+    align-items: center; /* Aligns content vertically */
+    justify-content: space-between; /* Pushes content to left & right */
+    gap: 50px; /* Adds spacing between sections */
+    max-width: 1200px;
+    margin: auto; /* Centers the section */
+    padding: 40px 60px; /* Adds spacing around */
+}
+
+/* Left content */
+.pet-content {
+    flex: 1; /* Takes up available space */
+    text-align: left; /* Ensures text aligns to the left */
+    /* font-size:30px; */
+}
+.text {
+    margin-top: 15px; /* Adds spacing between button and text */
+    font-size: 25px;
+    color: #444;
+}
+
+/* Right image section */
+.pet-image {
+    flex: 1; /* Takes equal space as left side */
+    display: flex;
+    justify-content: center;
+}
+
+/* Ensures images stay in place */
+.category2 {
+    position: relative;
+    width: 350px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background image */
+.category-box {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay pet doctor image */
+.vetdoc-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+}
+.classes{
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    background-color:#b0d9f0;
+    cursor:pointer;
+}
+.classes ul li{
+    list-style:none;
+    
+}
+.class1{
+    margin-top:10px;
+}
+.class2{
+    margin-bottom:60px;
+}
+.class3{
+    margin-top:10px;
+}
+.img {
+    /* margin-bottom:7px; */
+    position: relative;
+    width: 280px;
+    height: 350px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.footer-img {
+    margin-bottom:30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    padding-right:40px;
+}
+.foot-logo {
+    padding-left:50px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.foot-logo i {
+    color: #6d6d6e;
+    margin-right: 8px;
+}
+
+.pet-content {
+    cursor: pointer; /* Shows pointer on hover */
+    transition: transform 0.2s ease-in-out; /* Adds click effect */
+}
+
+/* Add hover effect */
+.pet-content:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+li {
+    position: relative;
+    /* display: inline-block; */
+    padding-bottom: 5px;
+}
+
+li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+}
+
+li:hover::after {
+    width: 100%;
+}

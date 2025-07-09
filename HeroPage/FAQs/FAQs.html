@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .info-box {
+            background-color: #ffffff;
+            width: 80%;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            max-height: 80vh;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .info-box:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        h3:hover {
+            color: #1a73e8;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        p strong {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        p:hover {
+            color: #4a90e2;
+        }
+
+        /* Add some padding and spacing to each question */
+        p:not(:first-child) {
+            padding-top: 10px;
+        }
+
+        /* Add smooth transitions to hover states */
+        p, h3 {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Color for the answers */
+        .answer {
+            font-style: italic;
+            color: #777;
+        }
+
+        /* Button-like style for questions */
+        p:hover {
+            transform: translateX(5px);
+        }
+
+        /* Style for the form */
+        .ask-form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ask-form h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .ask-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .ask-form input:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        .ask-form button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .ask-form button:hover {
+            background-color: #1a73e8;
+        }
+
+        .reply-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .reply-button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .reply-button:hover {
+            background-color: #1a73e8;
+        }
+
+        .replies {
+            margin-top: 10px;
+        }
+
+        .reply {
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="info-box">
+        <h3>Frequently Asked Questions</h3>
+        
+        <p><strong>Q: What should I feed my pet?</strong></p>
+        <p class="answer">A: Provide a balanced diet with vet-recommended pet food suitable for their age and breed.</p>
+
+        <p><strong>Q: How often should I take my pet to the vet?</strong></p>
+        <p class="answer">A: A routine check-up every 6-12 months is recommended, or immediately if they show signs of illness.</p>
+
+        <p><strong>Q: What are some common pet grooming tips?</strong></p>
+        <p class="answer">A: Regular brushing, bathing, and nail trimming are essential for maintaining your pet’s hygiene.</p>
+
+        <p><strong>Q: How can I train my pet?</strong></p>
+        <p class="answer">A: Use positive reinforcement, consistency, and patience while training your pet.</p>
+
+        <p><strong>Q: What vaccinations does my pet need?</strong></p>
+        <p class="answer">A: Core vaccinations include rabies, distemper, and parvovirus for dogs, and rabies and feline distemper for cats.</p>
+
+        <p><strong>Q: How do I keep my pet active?</strong></p>
+        <p class="answer">A: Engage in regular walks, playtime, and mental stimulation activities.</p>
+
+        <p><strong>Q: How do I introduce a new pet to my home?</strong></p>
+        <p class="answer">A: Allow gradual introductions, provide separate spaces initially, and use supervision.</p>
+
+        <p><strong>Q: What should I do if my pet is lost?</strong></p>
+        <p class="answer">A: Contact local shelters, post on social media, and check with neighbors.</p>
+
+        <p><strong>Q: How can I keep my pet safe at home?</strong></p>
+        <p class="answer">A: Remove toxic plants, secure electrical cords, and keep hazardous substances out of reach.</p>
+
+        <p><strong>Q: How can I tell if my pet is sick?</strong></p>
+        <p class="answer">A: Watch for signs like lethargy, loss of appetite, vomiting, or unusual behavior.</p>
+
+        <p><strong>Q: How do I prevent fleas and ticks?</strong></p>
+        <p class="answer">A: Use vet-approved flea prevention treatments and maintain cleanliness in your pet’s environment.</p>
+
+        <p><strong>Q: How do I choose the right pet for my lifestyle?</strong></p>
+        <p class="answer">A: Consider factors like activity level, space, and time commitment before choosing a pet.</p>
+
+        <p><strong>Q: What are signs of a happy pet?</strong></p>
+        <p class="answer">A: Playfulness, a good appetite, wagging tail (dogs), purring (cats), and general curiosity.</p>
+
+        <p><strong>Q: How do I socialize my pet?</strong></p>
+        <p class="answer">A: Expose them to different environments, people, and other pets gradually and positively.</p>
+
+        <!-- Question and Reply Section -->
+        <div id="questions-list">
+            <!-- Questions will be dynamically added here -->
+        </div>
+
+        <!-- Ask Your Question Section -->
+        <div class="ask-form">
+            <h4>Ask Your Question</h4>
+            <form id="ask-question-form">
+                <input type="text" id="question" placeholder="Enter your question here..." required>
+                <button type="submit">Submit Question</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Handle question submission
+        document.getElementById('ask-question-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const questionText = document.getElementById('question').value;
+            
+            if (questionText.trim()) {
+                const questionContainer = document.createElement('div');
+                questionContainer.classList.add('question');
+                questionContainer.innerHTML = `
+                    <p><strong>Q: </strong>${questionText}</p>
+                    <div class="replies"></div>
+                    <input type="text" class="reply-input" placeholder="Write a reply..." />
+                    <button class="reply-button">Post Reply</button>
+                `;
+
+                document.getElementById('questions-list').appendChild(questionContainer);
+                document.getElementById('question').value = ''; // Clear input field
+            }
+        });
+
+        // Handle reply submissions
+        document.getElementById('questions-list').addEventListener('click', function(event) {
+            if (event.target && event.target.classList.contains('reply-button')) {
+                const replyInput = event.target.previousElementSibling;
+                const replyText = replyInput.value.trim();
+
+                if (replyText) {
+                    const replyDiv = document.createElement('div');
+                    replyDiv.classList.add('reply');
+                    replyDiv.textContent = replyText;
+
+                    const repliesContainer = event.target.parentElement.querySelector('.replies');
+                    repliesContainer.appendChild(replyDiv);
+
+                    replyInput.value = ''; // Clear input field after posting
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="section section-contact">
+    <div class="container">
+        <h2 class="common-heading">Contact Us</h2>
+    </div>
+
+    <div class="section-contact-main contact-container">
+        <form id="contactForm" action="https://formspree.io/f/xpwpjjaz" method="POST">
+            <div class="grid grid-two-column">
+                <div>
+                    <label for="username"></label>
+                    <input type="text" name="username" placeholder="Your Name" id="username" required autocomplete="off">
+                </div>
+                <div>
+                    <label for="email"></label>
+                    <input type="email" name="email" placeholder="Your Email" id="email" required autocomplete="off">
+                </div>
+            </div>
+
+            <div>
+                <label for="subject"></label>
+                <input type="text" name="subject" placeholder="Subject" id="subject" required autocomplete="off">
+            </div>
+            <div>
+                <label for="message"></label>
+                <textarea name="message" id="message" cols="30" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+
+            <div>
+                <input type="submit" class="btn" value="Send Message">
+            </div>
+        </form>
+
+        <div id="formMessage"></div>
+    </div>
+</section>
+<script src="script.js"></script>
+
+</body>
+</html>

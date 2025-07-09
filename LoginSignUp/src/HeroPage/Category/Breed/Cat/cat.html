@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cat Breed Finder</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fbe8f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #c9184a;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    input[list] {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .pet-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-left: 6px solid #ffb3c1;
+    }
+
+    .pet-card h3 {
+      margin: 0;
+      color: #800f2f;
+    }
+
+    .pet-card p {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #c9184a;
+    }
+
+    .no-data {
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🐱 Cat Breed Finder</h2>
+
+    <input list="breeds" id="breedDropdown" placeholder="Type or select cat breed..." />
+    <datalist id="breeds">
+      <option value="Persian">
+      <option value="Siamese">
+      <option value="Maine Coon">
+      <option value="Bengal">
+      <option value="Ragdoll">
+      <option value="British Shorthair">
+    </datalist>
+
+    <div id="petList"></div>
+  </div>
+
+  <script>
+    let allCats = [];
+
+    fetch('/api/cats')
+      .then(res => res.json())
+      .then(data => {
+        allCats = data;
+        renderPets(data);
+      });
+
+    function renderPets(pets) {
+      const container = document.getElementById('petList');
+      container.innerHTML = '';
+
+      if (pets.length === 0) {
+        container.innerHTML = '<p class="no-data">No matching cats found.</p>';
+        return;
+      }
+
+      pets.forEach(pet => {
+        const div = document.createElement('div');
+        div.className = 'pet-card';
+        div.innerHTML = `
+          <h3>${pet.full_name}</h3>
+          <p><span class="highlight">Breed:</span> ${pet.breed}</p>
+          <p><span class="highlight">Pet Type:</span> ${pet.pet_type}</p>
+          <p><span class="highlight">Age:</span> ${pet.age} year(s)</p>
+          <p><span class="highlight">Price:</span> ₹${pet.price}</p>
+          <p><span class="highlight">Email:</span> ${pet.email}</p>
+          <p><span class="highlight">Mobile:</span> ${pet.mobile}</p>
+          <p><span class="highlight">Location:</span> ${pet.location}</p>
+          <p><span class="highlight">State:</span> ${pet.state}</p>
+          <p><span class="highlight">District:</span> ${pet.district}</p>
+          <p><span class="highlight">Pin Code:</span> ${pet.pin_code}</p>
+          <p><span class="highlight">Description:</span> ${pet.description}</p>
+          <p><span class="highlight">Vaccination Docs:</span> ${pet.vaccination_docs || 'Not Provided'}</p>
+          <p><span class="highlight">Additional Docs:</span> ${pet.additional_docs || 'Not Provided'}</p>
+          <p><span class="highlight">Images:</span> ${Array.isArray(pet.pet_images) ? pet.pet_images.length + ' image(s)' : 'No images'}</p>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById('breedDropdown').addEventListener('input', e => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filtered = allCats.filter(pet =>
+        pet.breed.toLowerCase().includes(searchTerm)
+      );
+      renderPets(filtered);
+    });
+  </script>
+
+</body>
+</html>
